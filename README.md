@@ -50,10 +50,6 @@ Utilizei `ModelForm` para garantir validação automática e facilitar a integra
 
 A parte estrutural (HTML) foi organizada por mim, mas a estilização visual (CSS e design da interface) foi desenvolvida com auxílio de uma **IA**. A proposta foi elevar o visual do projeto para algo mais moderno, incluindo:
 
-*   🌑 **Tema escuro (Dark Mode)**
-*   ✨ **Efeitos de glassmorphism**
-*   📱 **Layout profissional e responsivo**
-*   📟 **Componentes visuais padronizados** (cards e botões)
 
 > Optei por utilizar a IA especificamente na parte de design para focar meu aprendizado principal na lógica, arquitetura e segurança da aplicação.
 
