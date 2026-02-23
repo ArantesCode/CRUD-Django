@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel de Controle | Alunos</title>
+  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+
+<body>
+  <div class="container list-container">
+    <h1>Alunos Registrados</h1>
+
+    <ul>
+      {% for aluno in alunos %}
+      <li class="aluno-card">
+        <div>
+          <span class="highlight">{{ aluno.nome }} {{ aluno.sobrenome }}</span>
+          <br>
+          <small style="color: var(--text-muted)">Turma: {{ aluno.turma }}</small>
+        </div>
+        <div class="btn-group">
+          <a href="{% url 'update' aluno.id %}" class="btn btn-secondary"
+            style="padding: 0.5rem 1rem; font-size: 0.8rem;">Editar</a>
+          <a href="{% url 'delete' aluno.id %}" class="btn btn-danger"
+            style="padding: 0.5rem 1rem; font-size: 0.8rem;">Deletar</a>
+        </div>
+      </li>
+      {% empty %}
+      <p>Nenhum aluno registrado no sistema.</p>
+      {% endfor %}
+    </ul>
+
+    <div style="margin-top: 2rem; text-align: center;">
+      <a href="{% url 'create' %}" class="btn btn-secondary">Adicionar Novo Aluno</a>
+    </div>
+  </div>
+</body>
+
+</html>

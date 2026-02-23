@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atualizar Cadastro | Sistema</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Atualização Cadastral</h1>
+        <p>Modificando os dados de <span class="highlight">{{ form.instance.nome }}</span>. Mantenha a integridade das
+            informações.</p>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="btn-group" style="margin-top: 2rem;">
+                <a href="{% url 'read' %}" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-secondary"
+                    style="border-color: var(--primary-color); color: var(--primary-color)">Atualizar Dados</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
